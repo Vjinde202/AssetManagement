@@ -1,4 +1,4 @@
-package com.abc.AssetManagement.entity;
+package com.abc.AssetManagement.UserEntity;
 
 import java.util.ArrayList;
 import java.util.List;
