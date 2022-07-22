@@ -10,7 +10,7 @@ public interface RequestService {
 	
 	public List<RequestedAssets> getAllRequests();
 	public boolean AddRequest(RequestedAssets req);
-	public boolean DeleteRequest(int id);
+	public boolean DeleteRequest(int id,String status);
 	public boolean updateRequsetDetails(String name,String upadtename);
 
 }

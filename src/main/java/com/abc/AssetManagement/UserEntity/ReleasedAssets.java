@@ -19,8 +19,9 @@ public class ReleasedAssets{
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY )
 	 private int ReleasedId;
-	 @OneToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
-	 @JoinColumn(name = "fk_Reqs")
+	 
+	 @OneToOne(fetch = FetchType.LAZY)
+	 @JoinColumn(name = "fk_Reqs",nullable=false)
 	 private RequestedAssets requestId;
 	 
 	@Column(name = "releaseStatus")
@@ -43,6 +44,18 @@ public ReleasedAssets() {
 	}
 	public void setReleaseStatus(String releaseStatus) {
 		ReleaseStatus = releaseStatus;
+	}
+	public int getReleasedId() {
+		return ReleasedId;
+	}
+	public void setReleasedId(int releasedId) {
+		ReleasedId = releasedId;
+	}
+	public RequestedAssets getRequestId() {
+		return requestId;
+	}
+	public void setRequestId(RequestedAssets requestId) {
+		this.requestId = requestId;
 	}
 
 }

@@ -29,6 +29,7 @@ public class RequestController {
 		List<RequestedAssets> requests = requestService.getAllRequests();
 		return requests;
 		
+		
 	}
 	
 	@PostMapping("/request") 
@@ -44,10 +45,11 @@ public class RequestController {
 		boolean result = requestService.updateRequsetDetails(name, updatename);
 		return msg;
 	}
-	@DeleteMapping("/delete/{id}")
-	public String deleted(@PathVariable int id) {
+	@DeleteMapping("/delete")
+	public String deleted(@RequestParam String id,@RequestParam String status) {
 		String msg = "request deleted";
-		boolean result = requestService.DeleteRequest(id);
+	
+		boolean result = requestService.DeleteRequest(Integer.parseInt(id),status);
 		return msg;
 	}
 
